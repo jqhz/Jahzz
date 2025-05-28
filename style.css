@@ -7,6 +7,7 @@
 
 body {
     background: #081b29;
+    
 }
 
 .header {
@@ -48,6 +49,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0 10%;
+    gap: 2rem;
 }
 
 .home-content {
@@ -89,6 +91,56 @@ body {
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
+}
 
+#terminal {
+    width: 80%;
+    max-width: 800px;
+    height: 60%;
+    background: rgba(30,30,46,0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    overflow-y: auto;
+}
 
+#output {
+    white-space: pre-wrap;
+}
+
+.input-line {
+    display: flex;
+    color: #cdd6f4;
+}
+
+.prompt {
+    margin-right: 8px;
+    color: #cdd6f4;
+}
+
+#cmdline {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: inherit;
+    flex: 1;
+}
+
+.ascii-logo {
+    color: #f38ba8;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
+}
+
+.cli,
+#terminal {
+    color: #cdd6f4;
+    font-family: monospace;
 }
