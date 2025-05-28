@@ -7,6 +7,10 @@
 
 body {
     background: #081b29;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin:0;
     
 }
 
@@ -45,7 +49,8 @@ body {
 }
 
 .home {
-    height: 100vh;
+    /*height: 100vh;*/
+    flex:1;
     display: flex;
     align-items: center;
     padding: 0 10%;
@@ -94,9 +99,10 @@ body {
 }
 
 #terminal {
+    flex: 0 0 auto;
     width: 80%;
     max-width: 800px;
-    height: 60%;
+    height: 60vh;
     background: rgba(30,30,46,0.9);
     padding: 20px;
     border-radius: 8px;
@@ -143,4 +149,12 @@ body {
 #terminal {
     color: #cdd6f4;
     font-family: monospace;
+}
+
+.footer {
+  background: #0d293f;
+  color: #cdd6f4;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
 }
