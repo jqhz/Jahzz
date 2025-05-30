@@ -47,9 +47,12 @@
                         </pre>
                     </div>
                     <div class="ascii-info">
-                        <div><strong>OS:</strong> Windows / Fedora Linux</div>
-                        <div><strong>Degree (Pursuing):</strong> Software Engineering</div>
-                        <div><strong>Year:</strong> 3rd — Junior</div>
+                        <div><strong>=======================================</strong></div>
+                        <div><strong> </strong></div>
+                        <div><strong>OS:</strong> Windows / Fedora Linux </div>
+                        <div><strong>Degree (Pursuing):</strong> B.S. Software Engineering </div>
+                        <div><strong>Year:</strong> 3rd — Junior </div>
+                        <div><strong>IDE:</strong> VSCode / NeoVim </div>
                     </div>
                 </div>
                 <div class="cli">Welcome to my interactive CLI! Type <code>help</code> to see commands.</div>
@@ -61,93 +64,6 @@
     </section>
     </main>
     <script type="module" src="script.js"></script>
-    <script>
-        const outputEl = document.getElementById('output');
-        const cmdInput = document.getElementById('cmdline');
-
-        const commands = {
-        help: () => `Available commands:\nhelp - show this list\nabout - display info\nclear - clear terminal`,
-        about: () => `I'm an interactive CLI demo built with HTML, CSS & JavaScript.`,
-        clear: () => { outputEl.innerHTML = ''; return ''; }
-        };
-
-        function handleCommand(cmd) {
-        const [base, ...args] = cmd.trim().split(' ');
-        if (!base) return;
-        if (commands[base]) {
-            return commands[base](args);
-        } else {
-            return `Command not found: ${base}`;
-        }
-        }
-
-        cmdInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            const cmd = cmdInput.value;
-            const promptLine = document.createElement('div');
-            promptLine.textContent = `> ${cmd}`;
-            outputEl.appendChild(promptLine);
-
-            const result = handleCommand(cmd);
-            if (result) {
-            const resLine = document.createElement('div');
-            resLine.textContent = result;
-            outputEl.appendChild(resLine);
-            }
-
-            cmdInput.value = '';
-            terminal.scrollTop = terminal.scrollHeight;
-        }
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = Array.from(document.querySelectorAll('.nav-item'));
-        const indicator = document.querySelector('.nav-indicator');
-        const sections = document.querySelectorAll('.page-section');
-
-        function moveIndicator(el) {
-            const { offsetLeft: x, offsetWidth: w } = el;
-            indicator.style.transform = `translateX(${x}px)`;
-            indicator.style.width = `${w}px`;
-        }
-
-        function activateSection(id) {
-            sections.forEach(sec => {
-            sec.classList.toggle('hidden', sec.id !== id);
-            });
-        }
-
-        // initialize:
-        const current = document.querySelector('.nav-item.active');
-        moveIndicator(current);
-        activateSection(current.getAttribute('href').substring(1));
-
-        // click handlers:
-        navLinks.forEach(link => {
-            link.addEventListener('click', e => {
-            e.preventDefault();
-
-            // 1) update active link
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-
-            // 2) slide the indicator
-            moveIndicator(link);
-
-            // 3) swap sections
-            const targetId = link.getAttribute('href').slice(1);
-            activateSection(targetId);
-            });
-        });
-
-        // on window resize, re-position the indicator under the active link
-        window.addEventListener('resize', () => {
-            const active = document.querySelector('.nav-item.active');
-            moveIndicator(active);
-        });
-        });
-    </script>
     <footer class="footer">
         <p>&copy; 2025 Jahzz. All rights reserved.</p>
     </footer>

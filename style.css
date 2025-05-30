@@ -73,12 +73,19 @@ body {
 
 #output {
     /*white-space: pre-wrap;*/
+    flex-direction: column;
+    overflow-x: none;
     white-space: pre;
     display: flex;
     flex-wrap:wrap;
     align-items: flex-start;
-    gap:1rem;
+    gap:0;
     font-family: monospace;
+}
+
+output > div {
+    margin:0;
+    padding: 0;
 }
 
 .input-line {
