@@ -110,3 +110,46 @@ const initial = document.querySelector('.nav-item.active');
 moveIndicator(initial);
 activateSection(initial.getAttribute('href').slice(1));
 });
+// **************=============================================================================
+
+const floatingCli = document.getElementById('floating-cli');
+const floatingCmd = document.getElementById('floating-cmdline');
+
+// Toggle floating CLI with backslash key
+window.addEventListener('keydown', (e) => {
+  if (e.key === '\\') {
+    e.preventDefault();
+    floatingCli.classList.toggle('hidden');
+    if (!floatingCli.classList.contains('hidden')) {
+      floatingCmd.focus();
+    } else {
+      floatingCmd.blur();
+    }
+  }
+});
+
+floatingCmd.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const input = floatingCmd.value.trim();
+    if (input.startsWith('cd ')) {
+      const section = input.slice(3);
+      const sectionIds = ['home', 'about', 'projects', 'contact'];
+      if (sectionIds.includes(section)) {
+        // Simulate navbar click
+        const navLink = document.querySelector(`.nav-item[href="#${section}"]`);
+        if (navLink) navLink.click();
+      }
+    }
+    const sectionIds = ['home', 'about', 'projects', 'contact'];
+    if (sectionIds.includes(input)) {
+    // simulate navbar click as before, but using input directly
+        const navLink = document.querySelector(`.nav-item[href="#${input}"]`);
+        if (navLink) navLink.click();
+    }
+    floatingCmd.value = '';
+    floatingCli.classList.add('hidden');
+  } else if (e.key === 'Escape') {
+    floatingCmd.value = '';
+    floatingCli.classList.add('hidden');
+  }
+});

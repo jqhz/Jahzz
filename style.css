@@ -230,3 +230,38 @@ output > div {
 .page-section.hidden {
   display: none;
 }
+
+#floating-cli {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(30,30,46,0.95);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+  }
+  
+  .floating-cli-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  #floating-cmdline {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #cdd6f4;
+    font-family: monospace;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    width: 300px;
+  }
+  
+  #floating-cli.hidden {
+    display: none;
+  }
