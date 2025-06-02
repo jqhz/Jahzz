@@ -71,6 +71,22 @@ body {
     overflow-x: hidden;
 }
 
+#about-content{
+    color: #cdd6f4;
+    font-family: monospace;
+    flex: 0 0 auto;
+    width: 60vw;
+    max-width: 1000px;
+    height: 50vh;
+    min-height:300px;
+    background: rgba(30,30,46,0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 #output {
     /*white-space: pre-wrap;*/
     flex-direction: column;
