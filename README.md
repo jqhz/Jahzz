@@ -1,2 +1,2 @@
 # Jahzz
-Blog 2.0
+https://jqhz.github.io
